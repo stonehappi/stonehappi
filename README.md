@@ -81,6 +81,11 @@ University of Phayao, Thailand
 | **Portfolio Website** | Personal site built using HTML and Tailwind CSS. | [View on GitHub](https://github.com/yourusername/portfolio-site) |
 
 ---
+## 🎓 Coures
+
+### Power BI
+- [LINK](power-bi)
+---
 
 ## 📫 Contact
 

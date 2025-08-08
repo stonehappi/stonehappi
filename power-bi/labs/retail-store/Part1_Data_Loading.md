@@ -1,4 +1,3 @@
-
 # 🧪 Part 1: Data Loading – Step-by-Step Guide
 
 This section teaches students how to **import Excel data into Power BI** properly. Follow these instructions carefully.
@@ -32,6 +31,7 @@ This section teaches students how to **import Excel data into Power BI** properl
   - `Inventory`
   - `LeadTimeUpdates`
   - `ConsumptionUpdates`
+  - `NewTableName` <!-- Add the actual new table name here -->
 
 > ✅ **Tip:** Click each sheet once to preview the data on the right side.
 
@@ -44,6 +44,7 @@ This section teaches students how to **import Excel data into Power BI** properl
   - ✔️ Inventory
   - ✔️ LeadTimeUpdates
   - ✔️ ConsumptionUpdates
+  - ✔️ NewTableName <!-- Add the actual new table name here -->
 - Click the **Load** button (bottom right corner).
 
 > ⚠️ Do **not** click "Transform Data" yet — we’ll do that in Part 2 if cleaning is needed.
@@ -65,3 +66,4 @@ This section teaches students how to **import Excel data into Power BI** properl
     - `Inventory`: ItemCode, ItemName, StockLevel, etc.
     - `LeadTimeUpdates`: Date, ItemCode, EstimatedDays, ActualDays
     - `ConsumptionUpdates`: Date, ItemCode, DailyConsumption
+    - `NewTableName`: ... <!-- Add a brief description of columns for the new table -->

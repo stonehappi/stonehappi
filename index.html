@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seng Vannak · សេង វណ្ណៈ — Portfolio</title>
+  <meta name="description" content="Seng Vannak — PhD Candidate in Management Technology, Lecturer & Researcher at RUPP. Candidate for Deputy Head of the SCA Department." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Kantumruy+Pro:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            paper: '#f4f2ec', surface: '#fbfaf6', surface2: '#efece3',
+            ink: '#16212b', inksoft: '#4c5b64', line: '#dbd7cc',
+            teal: '#0e7c72', amber: '#b5811d',
+            dpaper: '#0e1820', dsurface: '#15222c', dsurface2: '#1a2932',
+            dink: '#eef2ef', dinksoft: '#9fb1ba', dline: '#26363f',
+            dteal: '#34b7a7', damber: '#e0aa4a',
+          },
+          fontFamily: {
+            display: ['Fraunces', 'Georgia', 'serif'],
+            sans: ['"IBM Plex Sans"', 'system-ui', 'sans-serif'],
+            mono: ['"IBM Plex Mono"', 'ui-monospace', 'monospace'],
+            khmer: ['"Kantumruy Pro"', '"Noto Sans Khmer"', '"Khmer OS System"', 'sans-serif'],
+          },
+          maxWidth: { content: '1140px' },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    :lang(km), .km { font-family: 'Kantumruy Pro', 'Noto Sans Khmer', 'Khmer OS System', sans-serif; line-height: 1.85; }
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+    .grid-bg {
+      background-image:
+        linear-gradient(rgba(0,0,0,.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,0,0,.05) 1px, transparent 1px);
+      background-size: 46px 46px;
+      -webkit-mask-image: radial-gradient(120% 90% at 85% 5%, #000 0%, transparent 60%);
+              mask-image: radial-gradient(120% 90% at 85% 5%, #000 0%, transparent 60%);
+    }
+    .dark .grid-bg {
+      background-image:
+        linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px);
+    }
+    ::selection { background: #0e7c7233; }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+  </style>
+</head>
+
+<body class="bg-paper dark:bg-dpaper text-ink dark:text-dink font-sans antialiased overflow-x-hidden selection:text-ink">
+
+  <!-- Theme toggle -->
+  <button id="themeToggle" aria-label="Toggle theme"
+    class="fixed top-4 right-4 z-50 font-mono text-[11px] tracking-widest px-3 py-2 rounded-full border border-line dark:border-dline bg-surface/80 dark:bg-dsurface/80 backdrop-blur text-inksoft dark:text-dinksoft hover:text-teal dark:hover:text-dteal hover:border-teal dark:hover:border-dteal transition">
+    ◐ THEME
+  </button>
+
+  <!-- ============ HERO ============ -->
+  <header class="relative border-b border-line dark:border-dline overflow-hidden">
+    <canvas id="net" class="absolute inset-0 w-full h-full opacity-90" aria-hidden="true"></canvas>
+    <div class="grid-bg absolute inset-0 opacity-60" aria-hidden="true"></div>
+
+    <div class="relative z-10 mx-auto max-w-content px-6 sm:px-10 py-16 sm:py-24 grid lg:grid-cols-[1.55fr_0.9fr] gap-10 lg:gap-16 items-center">
+      <div>
+        <p class="km font-mono text-[12px] sm:text-sm tracking-[0.2em] uppercase text-teal dark:text-dteal">
+          ដេប៉ាតឺម៉ង់ ខ្សែសង្វាក់ផ្គត់ផ្គង់ &amp; ស្វ័យប្រវត្តិកម្ម — SCA
+        </p>
+        <h1 class="km font-bold leading-[1.02] tracking-tight mt-5 text-[clamp(3rem,9vw,6rem)]">សេង វណ្ណៈ</h1>
+        <p class="font-display italic text-inksoft dark:text-dinksoft text-[clamp(1.5rem,4vw,2.4rem)] mt-1">Seng Vannak</p>
+
+        <p class="mt-4 text-[clamp(1rem,2.4vw,1.35rem)] text-inksoft dark:text-dinksoft">
+          PhD Candidate · Management Technology &nbsp;—&nbsp; Lecturer &amp; Researcher, RUPP
+        </p>
+        <p class="km mt-3 inline-flex flex-wrap items-center gap-2 text-lg">
+          <span class="font-semibold">បេក្ខជនអនុប្រធានដេប៉ាតឺម៉ង់</span>
+          <span class="text-inksoft dark:text-dinksoft">· Candidate — Deputy Head</span>
+        </p>
+
+        <p class="km mt-7 max-w-[32ch] text-lg leading-relaxed border-l-[3px] border-teal dark:border-dteal pl-4">
+          រយៈពេល ៥ ឆ្នាំ រួមកសាង និងបង្កើតមូលដ្ឋានឌីជីថលរបស់ដេប៉ាតឺម៉ង់ SCA ពីថ្ងៃដំបូង រហូតដល់សព្វថ្ងៃ។
+        </p>
+
+        <div class="flex flex-wrap gap-3 mt-9 font-mono text-[13px]">
+          <a href="#projects" class="inline-flex items-center gap-2 px-5 py-3 rounded-sm bg-teal dark:bg-dteal text-white dark:text-dpaper hover:-translate-y-0.5 transition">មើលស្នាដៃ · Projects</a>
+          <a href="#research" class="inline-flex items-center gap-2 px-5 py-3 rounded-sm border border-line dark:border-dline hover:border-teal dark:hover:border-dteal hover:text-teal dark:hover:text-dteal transition">ស្រាវជ្រាវ · Research</a>
+          <a href="#contact" class="inline-flex items-center gap-2 px-5 py-3 rounded-sm border border-line dark:border-dline hover:border-teal dark:hover:border-dteal hover:text-teal dark:hover:text-dteal transition">ទំនាក់ទំនង · Contact</a>
+        </div>
+      </div>
+
+      <!-- Portrait -->
+      <figure class="relative mx-auto lg:mx-0 max-w-[300px] lg:max-w-none w-full order-first lg:order-none">
+        <div class="relative rounded-lg overflow-hidden border border-line dark:border-dline shadow-2xl shadow-black/20"
+             style="background: radial-gradient(120% 90% at 50% 0%, #e9f3f1, #d7e3e1);">
+          <img src="seng-vannak.png" alt="Seng Vannak" class="w-full h-full object-cover object-top" />
+        </div>
+        <figcaption class="absolute bottom-0 inset-x-0 px-3 py-2 font-mono text-[11px] tracking-widest text-white bg-gradient-to-t from-black/70 to-transparent rounded-b-lg">
+          SENG VANNAK · RUPP
+        </figcaption>
+      </figure>
+    </div>
+  </header>
+
+  <!-- ============ STATS ============ -->
+  <div class="grid grid-cols-2 md:grid-cols-4 border-b border-line dark:border-dline">
+    <div class="p-7 sm:p-9 border-line dark:border-dline">
+      <div class="font-display text-[clamp(2.4rem,6vw,3.6rem)] leading-none tabular-nums">05<span class="km text-teal dark:text-dteal text-[0.4em] ml-2">ឆ្នាំ</span></div>
+      <div class="km text-sm text-inksoft dark:text-dinksoft mt-3">រួមកសាងដេប៉ាតឺម៉ង់ SCA តាំងពីថ្ងៃបង្កើត</div>
+    </div>
+    <div class="p-7 sm:p-9 border-l border-line dark:border-dline">
+      <div class="font-display text-[clamp(2.4rem,6vw,3.6rem)] leading-none tabular-nums">06</div>
+      <div class="km text-sm text-inksoft dark:text-dinksoft mt-3">ការស្រាវជ្រាវបានបោះពុម្ព<br>IEEE · Energies · IEOM</div>
+    </div>
+    <div class="p-7 sm:p-9 md:border-l border-line dark:border-dline">
+      <div class="font-display text-[clamp(2.4rem,6vw,3.6rem)] leading-none tabular-nums">02</div>
+      <div class="km text-sm text-inksoft dark:text-dinksoft mt-3">ប្រព័ន្ធឌីជីថលបានបង្កើត<br>SCA App · SCA LMS</div>
+    </div>
+    <div class="p-7 sm:p-9 border-l border-line dark:border-dline">
+      <div class="font-display text-[clamp(1.6rem,4vw,2.6rem)] leading-none">Lecturer</div>
+      <div class="km text-sm text-inksoft dark:text-dinksoft mt-3">Faculty of Engineering, RUPP · ២០២២ ដល់បច្ចុប្បន្ន</div>
+    </div>
+  </div>
+
+  <main>
+    <!-- ============ ABOUT ============ -->
+    <section class="border-b border-line dark:border-dline">
+      <div class="mx-auto max-w-content px-6 sm:px-10 py-16 sm:py-24 grid md:grid-cols-[1.5fr_1fr] gap-8 md:gap-16 items-start reveal">
+        <p class="km text-[clamp(1.15rem,2.5vw,1.5rem)] leading-relaxed">
+          ខ្ញុំជាមនុស្សដែល <span class="text-teal dark:text-dteal font-semibold">គិត និងមើលការណ៍ទៅមុខ</span> —
+          ភ្ជាប់រវាងការស្រាវជ្រាវ (AI, Optimization, Data) និងការអនុវត្តជាក់ស្តែង
+          ដោយបំប្លែងវាទៅជាឧបករណ៍ដែលនិស្សិត និងក្រុមការងារ SCA ប្រើប្រាស់បានពិតប្រាកដ។
+        </p>
+        <p class="km text-inksoft dark:text-dinksoft border-l border-line dark:border-dline pl-6">
+          ជានិស្សិតបណ្ឌិត Management Technology នៅ SIIT, Thammasat University
+          និងជាសាស្ត្រាចារ្យបង្រៀននៅ RUPP។ ស្រាវជ្រាវ និងបង្កើតកម្មវិធីជាក់ស្តែងជារៀងរាល់ថ្ងៃ។
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ CAPABILITIES ============ -->
+    <section class="bg-surface dark:bg-dsurface border-b border-line dark:border-dline">
+      <div class="mx-auto max-w-content px-6 sm:px-10 py-16 sm:py-24 reveal">
+        <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-10">
+          <span class="font-mono text-sm text-teal dark:text-dteal tracking-widest">01</span>
+          <h2 class="font-display font-semibold text-[clamp(1.6rem,4vw,2.4rem)] tracking-tight">Capabilities</h2>
+          <span class="km text-inksoft dark:text-dinksoft">ជំនាញដែលដេប៉ាតឺម៉ង់ត្រូវការ</span>
+        </div>
+        <div class="grid gap-px bg-line dark:bg-dline border border-line dark:border-dline sm:grid-cols-3 lg:grid-cols-5">
+          <div class="bg-surface dark:bg-dsurface p-6 hover:bg-teal/5 dark:hover:bg-dteal/10 transition">
+            <div class="font-mono text-[11px] tracking-widest text-teal dark:text-dteal">01 / DIGITAL</div>
+            <h3 class="font-display font-semibold text-xl mt-3 mb-2">Digital</h3>
+            <p class="km text-sm text-inksoft dark:text-dinksoft">ការផ្លាស់ប្តូរដំណើរការការងារទៅជាឌីជីថល</p>
+          </div>
+          <div class="bg-surface dark:bg-dsurface p-6 hover:bg-teal/5 dark:hover:bg-dteal/10 transition">
+            <div class="font-mono text-[11px] tracking-widest text-teal dark:text-dteal">02 / DATA</div>
+            <h3 class="font-display font-semibold text-xl mt-3 mb-2">Power BI</h3>
+            <p class="km text-sm text-inksoft dark:text-dinksoft">ការវិភាគទិន្នន័យ និងផ្ទាំងគ្រប់គ្រង</p>
+          </div>
+          <div class="bg-surface dark:bg-dsurface p-6 hover:bg-teal/5 dark:hover:bg-dteal/10 transition">
+            <div class="font-mono text-[11px] tracking-widest text-teal dark:text-dteal">03 / ERP</div>
+            <h3 class="font-display font-semibold text-xl mt-3 mb-2">Odoo</h3>
+            <p class="km text-sm text-inksoft dark:text-dinksoft">ប្រព័ន្ធគ្រប់គ្រងធនធាន និងប្រតិបត្តិការ</p>
+          </div>
+          <div class="bg-surface dark:bg-dsurface p-6 hover:bg-teal/5 dark:hover:bg-dteal/10 transition">
+            <div class="font-mono text-[11px] tracking-widest text-teal dark:text-dteal">04 / INTELLIGENCE</div>
+            <h3 class="font-display font-semibold text-xl mt-3 mb-2">AI / ML</h3>
+            <p class="km text-sm text-inksoft dark:text-dinksoft">ស្វ័យប្រវត្តិកម្ម បញ្ញាសិប្បនិម្មិត និង Optimization</p>
+          </div>
+          <div class="bg-surface dark:bg-dsurface p-6 hover:bg-teal/5 dark:hover:bg-dteal/10 transition">
+            <div class="font-mono text-[11px] tracking-widest text-teal dark:text-dteal">05 / BUILD</div>
+            <h3 class="font-display font-semibold text-xl mt-3 mb-2">Code</h3>
+            <p class="km text-sm text-inksoft dark:text-dinksoft">Web · Mobile · Database · System Design</p>
+          </div>
+        </div>
+
+        <!-- Tech stack chips -->
+        <div class="mt-8 flex flex-wrap gap-2">
+          <span class="font-mono text-[11px] text-inksoft dark:text-dinksoft mr-2 py-1">STACK //</span>
+          <span class="font-mono text-[11px] tracking-wide px-3 py-1.5 rounded-full border border-line dark:border-dline text-inksoft dark:text-dinksoft">Python</span>
+          <span class="font-mono text-[11px] tracking-wide px-3 py-1.5 rounded-full border border-line dark:border-dline text-inksoft dark:text-dinksoft">TypeScript</span>
+          <span class="font-mono text-[11px] tracking-wide px-3 py-1.5 rounded-full border border-line dark:border-dline text-inksoft dark:text-dinksoft">Java</span>
+          <span class="font-mono text-[11px] tracking-wide px-3 py-1.5 rounded-full border border-line dark:border-dline text-inksoft dark:text-dinksoft">Go</span>
+          <span class="font-mono text-[11px] tracking-wide px-3 py-1.5 rounded-full border border-line dark:border-dline text-inksoft dark:text-dinksoft">C#</span>
+          <span class="font-mono text-[11px] tracking-wide px-3 py-1.5 rounded-full border border-line dark:border-dline text-inksoft dark:text-dinksoft">Dart</span>
+          <span class="font-mono text-[11px] tracking-wide px-3 py-1.5 rounded-full border border-line dark:border-dline text-inksoft dark:text-dinksoft">Angular</span>
+          <span class="font-mono text-[11px] tracking-wide px-3 py-1.5 rounded-full border border-line dark:border-dline text-inksoft dark:text-dinksoft">Flutter</span>
+          <span class="font-mono text-[11px] tracking-wide px-3 py-1.5 rounded-full border border-line dark:border-dline text-inksoft dark:text-dinksoft">FastAPI</span>
+          <span class="font-mono text-[11px] tracking-wide px-3 py-1.5 rounded-full border border-line dark:border-dline text-inksoft dark:text-dinksoft">.NET Core</span>
+          <span class="font-mono text-[11px] tracking-wide px-3 py-1.5 rounded-full border border-line dark:border-dline text-inksoft dark:text-dinksoft">TensorFlow.js</span>
+          <span class="font-mono text-[11px] tracking-wide px-3 py-1.5 rounded-full border border-line dark:border-dline text-inksoft dark:text-dinksoft">n8n</span>
+          <span class="font-mono text-[11px] tracking-wide px-3 py-1.5 rounded-full border border-line dark:border-dline text-inksoft dark:text-dinksoft">Power Platform</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section id="projects" class="border-b border-line dark:border-dline">
+      <div class="mx-auto max-w-content px-6 sm:px-10 py-16 sm:py-24 reveal">
+        <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-10">
+          <span class="font-mono text-sm text-teal dark:text-dteal tracking-widest">02</span>
+          <h2 class="font-display font-semibold text-[clamp(1.6rem,4vw,2.4rem)] tracking-tight">Built for SCA</h2>
+          <span class="km text-inksoft dark:text-dinksoft">ស្នាដៃ ដែលកំពុងដំណើរការក្នុងដេប៉ាតឺម៉ង់</span>
+        </div>
+
+        <div class="flex flex-col gap-16 lg:gap-24">
+          <!-- SCA App — mobile -->
+          <article class="grid md:grid-cols-2 gap-8 lg:gap-16 items-center">
+            <div class="flex justify-center items-center gap-3 sm:gap-4">
+              <div class="relative w-1/2 max-w-[185px] -rotate-3 rounded-[2rem] border-[6px] border-ink/85 dark:border-white/15 bg-white overflow-hidden shadow-2xl shadow-black/30">
+                <img src="sca-app-2.png" alt="SCA App — home screen with quick actions and today's schedule" class="block w-full h-auto" />
+              </div>
+              <div class="relative w-1/2 max-w-[185px] rotate-3 rounded-[2rem] border-[6px] border-ink/85 dark:border-white/15 bg-white overflow-hidden shadow-2xl shadow-black/30">
+                <img src="sca-app-1.png" alt="SCA App — My Score with GPA, credits and trend" class="block w-full h-auto" />
+              </div>
+            </div>
+            <div class="flex flex-col gap-4">
+              <span class="font-mono text-[11px] tracking-widest uppercase text-amber dark:text-damber">Mobile app · Daily use</span>
+              <h3 class="font-display font-semibold text-4xl sm:text-5xl">SCA App</h3>
+              <p class="km text-lg text-inksoft dark:text-dinksoft">កម្មវិធីទូរស័ព្ទសម្រាប់និស្សិត និងសាស្ត្រាចារ្យ — គ្រប់មុខងារសំខាន់ក្នុងកម្មវិធីតែមួយ។</p>
+              <ul class="km flex flex-col gap-2.5">
+                <li class="flex gap-2.5"><span class="text-teal dark:text-dteal font-mono">→</span>មុខងាររហ័ស៖ វត្តមាន កាលវិភាគ សុំច្បាប់ វាយតម្លៃ បង្កើត CV និងស្ទង់មតិ</li>
+                <li class="flex gap-2.5"><span class="text-teal dark:text-dteal font-mono">→</span>តាមដានពិន្ទុ GPA ក្រេឌីត និងនិន្នាការលទ្ធផលសិក្សា តាមឆមាស</li>
+              </ul>
+              <div class="flex flex-wrap gap-2 pt-3">
+                <span class="font-mono text-[11px] px-2.5 py-1 rounded-full border border-line dark:border-dline text-inksoft dark:text-dinksoft">Flutter</span>
+                <span class="font-mono text-[11px] px-2.5 py-1 rounded-full border border-line dark:border-dline text-inksoft dark:text-dinksoft">FastAPI</span>
+                <span class="font-mono text-[11px] px-2.5 py-1 rounded-full border border-line dark:border-dline text-inksoft dark:text-dinksoft">Firebase</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- SCA LMS — web -->
+          <article class="grid md:grid-cols-2 gap-8 lg:gap-16 items-center">
+            <div class="rounded-lg border border-line dark:border-dline overflow-hidden shadow-2xl shadow-black/20 bg-white dark:bg-dsurface">
+              <div class="h-8 flex items-center gap-1.5 px-3 bg-surface2 dark:bg-dsurface2 border-b border-line dark:border-dline">
+                <span class="w-2.5 h-2.5 rounded-full bg-[#ff5f57]"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-[#febc2e]"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-[#28c840]"></span>
+                <span class="ml-3 font-mono text-[10px] text-inksoft dark:text-dinksoft truncate">sca.eventhub.one</span>
+              </div>
+              <img src="sca-web.png" alt="SCA LMS — instructor schedule and academic management platform" class="block w-full h-auto" />
+            </div>
+            <div class="flex flex-col gap-4">
+              <span class="font-mono text-[11px] tracking-widest uppercase text-amber dark:text-damber">Web platform · Department-wide</span>
+              <h3 class="font-display font-semibold text-4xl sm:text-5xl">SCA LMS</h3>
+              <p class="km text-lg text-inksoft dark:text-dinksoft">ប្រព័ន្ធគ្រប់គ្រងការសិក្សាតាមអ៊ីនធឺណិត Digitalize ការងារទាំងមូល។</p>
+              <ul class="km flex flex-col gap-2.5">
+                <li class="flex gap-2.5"><span class="text-teal dark:text-dteal font-mono">→</span>គ្រប់គ្រងកាលវិភាគ ថ្នាក់រៀន គ្រូ និងនិស្សិត ក្នុងកន្លែងតែមួយ</li>
+                <li class="flex gap-2.5"><span class="text-teal dark:text-dteal font-mono">→</span>វាយតម្លៃ KPI វត្តមាន និងនាំចេញរបាយការណ៍បានស្វ័យប្រវត្តិ</li>
+              </ul>
+              <div class="flex flex-wrap gap-2 pt-3">
+                <span class="font-mono text-[11px] px-2.5 py-1 rounded-full border border-line dark:border-dline text-inksoft dark:text-dinksoft">Angular</span>
+                <span class="font-mono text-[11px] px-2.5 py-1 rounded-full border border-line dark:border-dline text-inksoft dark:text-dinksoft">FastAPI</span>
+                <span class="font-mono text-[11px] px-2.5 py-1 rounded-full border border-line dark:border-dline text-inksoft dark:text-dinksoft">Power BI</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Open source -->
+        <h3 class="font-mono text-sm tracking-widest text-inksoft dark:text-dinksoft mt-12 mb-4 uppercase">Open source · github.com/stonehappi</h3>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <a href="https://github.com/stonehappi" target="_blank" rel="noopener" class="group block border border-line dark:border-dline rounded-md p-5 hover:border-teal dark:hover:border-dteal transition">
+            <div class="flex items-center justify-between"><span class="font-mono font-semibold group-hover:text-teal dark:group-hover:text-dteal">NetraScope</span><span class="font-mono text-[10px] px-2 py-0.5 rounded-full border border-line dark:border-dline text-inksoft dark:text-dinksoft">TypeScript</span></div>
+            <p class="text-sm text-inksoft dark:text-dinksoft mt-2">Self-hosted, open-source server monitoring platform with a lightweight cross-platform agent.</p>
+          </a>
+          <a href="https://github.com/stonehappi" target="_blank" rel="noopener" class="group block border border-line dark:border-dline rounded-md p-5 hover:border-teal dark:hover:border-dteal transition">
+            <div class="flex items-center justify-between"><span class="font-mono font-semibold group-hover:text-teal dark:group-hover:text-dteal">sustainable-scheduling</span><span class="font-mono text-[10px] px-2 py-0.5 rounded-full border border-line dark:border-dline text-inksoft dark:text-dinksoft">Research</span></div>
+            <p class="text-sm text-inksoft dark:text-dinksoft mt-2">Research prototype exploring sustainable production scheduling.</p>
+          </a>
+          <a href="https://github.com/stonehappi" target="_blank" rel="noopener" class="group block border border-line dark:border-dline rounded-md p-5 hover:border-teal dark:hover:border-dteal transition">
+            <div class="flex items-center justify-between"><span class="font-mono font-semibold group-hover:text-teal dark:group-hover:text-dteal">auto-backup-db</span><span class="font-mono text-[10px] px-2 py-0.5 rounded-full border border-line dark:border-dline text-inksoft dark:text-dinksoft">Python</span></div>
+            <p class="text-sm text-inksoft dark:text-dinksoft mt-2">Automated database backup utility.</p>
+          </a>
+          <a href="https://github.com/stonehappi" target="_blank" rel="noopener" class="group block border border-line dark:border-dline rounded-md p-5 hover:border-teal dark:hover:border-dteal transition">
+            <div class="flex items-center justify-between"><span class="font-mono font-semibold group-hover:text-teal dark:group-hover:text-dteal">dotnet-cqrs</span><span class="font-mono text-[10px] px-2 py-0.5 rounded-full border border-line dark:border-dline text-inksoft dark:text-dinksoft">C#</span></div>
+            <p class="text-sm text-inksoft dark:text-dinksoft mt-2">.NET reference implementation of the CQRS architectural pattern.</p>
+          </a>
+          <a href="https://github.com/stonehappi" target="_blank" rel="noopener" class="group block border border-line dark:border-dline rounded-md p-5 hover:border-teal dark:hover:border-dteal transition">
+            <div class="flex items-center justify-between"><span class="font-mono font-semibold group-hover:text-teal dark:group-hover:text-dteal">angular-firebase-realtime</span><span class="font-mono text-[10px] px-2 py-0.5 rounded-full border border-line dark:border-dline text-inksoft dark:text-dinksoft">TypeScript</span></div>
+            <p class="text-sm text-inksoft dark:text-dinksoft mt-2">Angular + Firebase realtime database CRUD demo.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ RESEARCH ============ -->
+    <section id="research" class="bg-surface dark:bg-dsurface border-b border-line dark:border-dline">
+      <div class="mx-auto max-w-content px-6 sm:px-10 py-16 sm:py-24 reveal">
+        <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-4">
+          <span class="font-mono text-sm text-teal dark:text-dteal tracking-widest">03</span>
+          <h2 class="font-display font-semibold text-[clamp(1.6rem,4vw,2.4rem)] tracking-tight">Research &amp; Publications</h2>
+          <span class="km text-inksoft dark:text-dinksoft">ការស្រាវជ្រាវ</span>
+        </div>
+        <p class="text-inksoft dark:text-dinksoft max-w-[65ch] mb-10">
+          Focus areas: AI &amp; Machine Learning · Reinforcement Learning &amp; Genetic Algorithms · Production Scheduling &amp; Optimization · Energy-Efficient Systems · Explainable AI · Deep Learning for Computer Vision.
+        </p>
+
+        <ol class="flex flex-col">
+          <li class="grid sm:grid-cols-[64px_1fr] gap-2 sm:gap-6 py-5 border-t border-line dark:border-dline">
+            <span class="font-mono text-teal dark:text-dteal">2026</span>
+            <div>
+              <p><span class="font-medium">An Integrated Heuristic for Make-to-Stock Production Scheduling.</span> 7th Asia Pacific Conf. on Industrial Engineering &amp; Operations Management (IEOM), Bangkok.</p>
+              <p class="font-mono text-xs text-inksoft dark:text-dinksoft mt-1">DOI: 10.46254/AP07.20260222</p>
+            </div>
+          </li>
+          <li class="grid sm:grid-cols-[64px_1fr] gap-2 sm:gap-6 py-5 border-t border-line dark:border-dline">
+            <span class="font-mono text-teal dark:text-dteal">2025</span>
+            <div>
+              <p><span class="font-medium">Daily Load Forecasting Using Explainable AI-Driven Method With Integrated Error Correlation.</span> <em>IEEE Access</em>, 13, 207496–207510.</p>
+              <p class="font-mono text-xs text-inksoft dark:text-dinksoft mt-1">DOI: 10.1109/ACCESS.2025.3640843</p>
+            </div>
+          </li>
+          <li class="grid sm:grid-cols-[64px_1fr] gap-2 sm:gap-6 py-5 border-t border-line dark:border-dline">
+            <span class="font-mono text-teal dark:text-dteal">2025</span>
+            <div>
+              <p><span class="font-medium">Intelligent Fuzzy Multi-Criteria Decision-Making for Energy-Saving Building Designs.</span> <em>Energies</em>, 18(11), 2726.</p>
+              <p class="font-mono text-xs text-inksoft dark:text-dinksoft mt-1">DOI: 10.3390/en18112726</p>
+            </div>
+          </li>
+          <li class="grid sm:grid-cols-[64px_1fr] gap-2 sm:gap-6 py-5 border-t border-line dark:border-dline">
+            <span class="font-mono text-teal dark:text-dteal">2025</span>
+            <div>
+              <p><span class="font-medium">Energy Efficiency in Buildings: Smart Glass Technology Evaluation and Selection Model.</span> <em>Energies</em>, 18(7), 1798.</p>
+              <p class="font-mono text-xs text-inksoft dark:text-dinksoft mt-1">DOI: 10.3390/en18071798</p>
+            </div>
+          </li>
+          <li class="grid sm:grid-cols-[64px_1fr] gap-2 sm:gap-6 py-5 border-t border-line dark:border-dline">
+            <span class="font-mono text-teal dark:text-dteal">2021</span>
+            <div>
+              <p><span class="font-medium">Segmentation of Background and Foreground for Ancient Lanna Archaic from Palm Leaf Manuscripts using Deep Learning.</span> DAMT &amp; NCON, IEEE.</p>
+            </div>
+          </li>
+          <li class="grid sm:grid-cols-[64px_1fr] gap-2 sm:gap-6 py-5 border-t border-b border-line dark:border-dline">
+            <span class="font-mono text-teal dark:text-dteal">2021</span>
+            <div>
+              <p><span class="font-medium">Hyperparameter Optimization in Genetic Algorithm with Reinforcement Learning for Production Scheduling with Lot Size.</span> Master's Thesis, Thammasat University.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ BACKGROUND ============ -->
+    <section class="border-b border-line dark:border-dline">
+      <div class="mx-auto max-w-content px-6 sm:px-10 py-16 sm:py-24 reveal">
+        <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-10">
+          <span class="font-mono text-sm text-teal dark:text-dteal tracking-widest">04</span>
+          <h2 class="font-display font-semibold text-[clamp(1.6rem,4vw,2.4rem)] tracking-tight">Background</h2>
+          <span class="km text-inksoft dark:text-dinksoft">ការសិក្សា និងបទពិសោធន៍</span>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-x-16 gap-y-10">
+          <!-- Education -->
+          <div>
+            <h3 class="font-mono text-xs tracking-widest text-inksoft dark:text-dinksoft uppercase mb-4">Education</h3>
+            <div class="flex flex-col">
+              <div class="grid grid-cols-[130px_1fr] gap-4 py-4 border-t border-line dark:border-dline">
+                <span class="font-mono text-sm text-teal dark:text-dteal">2025 – present</span>
+                <div><p class="font-display font-semibold text-lg">PhD, Management Technology</p><p class="text-sm text-inksoft dark:text-dinksoft">SIIT, Thammasat University, Thailand <em>(in progress)</em></p></div>
+              </div>
+              <div class="grid grid-cols-[130px_1fr] gap-4 py-4 border-t border-line dark:border-dline">
+                <span class="font-mono text-sm text-teal dark:text-dteal">2019 – 2021</span>
+                <div><p class="font-display font-semibold text-lg">Master, Management Technology</p><p class="text-sm text-inksoft dark:text-dinksoft">SIIT, Thammasat University, Thailand</p></div>
+              </div>
+              <div class="grid grid-cols-[130px_1fr] gap-4 py-4 border-t border-b border-line dark:border-dline">
+                <span class="font-mono text-sm text-teal dark:text-dteal">2015 – 2019</span>
+                <div><p class="font-display font-semibold text-lg">Bachelor, Information Technology</p><p class="text-sm text-inksoft dark:text-dinksoft">University of Phayao, Thailand</p></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Experience -->
+          <div>
+            <h3 class="font-mono text-xs tracking-widest text-inksoft dark:text-dinksoft uppercase mb-4">Experience</h3>
+            <div class="flex flex-col">
+              <div class="grid grid-cols-[130px_1fr] gap-4 py-4 border-t border-line dark:border-dline">
+                <span class="font-mono text-sm text-teal dark:text-dteal">2022 – present</span>
+                <div><p class="font-display font-semibold text-lg">Lecturer</p><p class="text-sm text-inksoft dark:text-dinksoft">Faculty of Engineering, RUPP — DBMS, Business Analytics, Power BI, Python</p></div>
+              </div>
+              <div class="grid grid-cols-[130px_1fr] gap-4 py-4 border-t border-line dark:border-dline">
+                <span class="font-mono text-sm text-teal dark:text-dteal">2021 – 2022</span>
+                <div><p class="font-display font-semibold text-lg">Research Assistant</p><p class="text-sm text-inksoft dark:text-dinksoft">LogEn Tech, SIIT, Thammasat University</p></div>
+              </div>
+              <div class="grid grid-cols-[130px_1fr] gap-4 py-4 border-t border-b border-line dark:border-dline">
+                <span class="font-mono text-sm text-teal dark:text-dteal">2018 – 2019</span>
+                <div><p class="font-display font-semibold text-lg">Software Internships</p><p class="text-sm text-inksoft dark:text-dinksoft">Lexer · Mulberry Soft · Imake — web &amp; mobile development</p></div>
+              </div>
+            </div>
+            <p class="font-mono text-xs text-inksoft dark:text-dinksoft mt-6">Languages: Khmer (native) · English · Thai</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CLOSE / CONTACT ============ -->
+    <section id="contact" class="text-center">
+      <div class="mx-auto max-w-content px-6 sm:px-10 py-20 sm:py-28 reveal">
+        <p class="font-mono text-sm tracking-widest uppercase text-teal dark:text-dteal">Let's build the next chapter of SCA</p>
+        <p class="km font-medium text-[clamp(1.6rem,4vw,2.4rem)] leading-snug max-w-[24ch] mx-auto mt-5">
+          ត្រៀមខ្លួនដឹកនាំដេប៉ាតឺម៉ង់ SCA ឆ្ពោះទៅមុខ ដោយឌីជីថល និងការច្នៃប្រឌិត។
+        </p>
+        <div class="flex flex-wrap justify-center gap-x-8 gap-y-3 mt-10 font-mono text-sm">
+          <a href="mailto:seng.vannak@rupp.edu.kh" class="border-b border-teal dark:border-dteal pb-0.5 hover:text-teal dark:hover:text-dteal transition">seng.vannak@rupp.edu.kh</a>
+          <a href="tel:+85581876453" class="border-b border-teal dark:border-dteal pb-0.5 hover:text-teal dark:hover:text-dteal transition">+855 81 876 453</a>
+          <a href="https://github.com/stonehappi" target="_blank" rel="noopener" class="border-b border-teal dark:border-dteal pb-0.5 hover:text-teal dark:hover:text-dteal transition">github.com/stonehappi</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-line dark:border-dline">
+    <div class="mx-auto max-w-content px-6 sm:px-10 py-8 flex flex-wrap justify-between gap-2 font-mono text-[11px] tracking-widest text-inksoft dark:text-dinksoft">
+      <span>© 2026 · SENG VANNAK / សេង វណ្ណៈ</span>
+      <span>PORTFOLIO · DEPUTY HEAD CANDIDATE · SCA</span>
+    </div>
+  </footer>
+
+  <script>
+    // ----- Theme: init from storage / system, then toggle -----
+    (function () {
+      var root = document.documentElement;
+      var saved = null;
+      try { saved = localStorage.getItem('theme'); } catch (e) {}
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (saved === 'dark' || (!saved && prefersDark)) root.classList.add('dark');
+      document.getElementById('themeToggle').addEventListener('click', function () {
+        root.classList.toggle('dark');
+        try { localStorage.setItem('theme', root.classList.contains('dark') ? 'dark' : 'light'); } catch (e) {}
+      });
+    })();
+
+    // ----- Scroll reveal -----
+    (function () {
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var els = document.querySelectorAll('.reveal');
+      if (reduce || !('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+      }, { threshold: 0.12 });
+      els.forEach(function (e) { io.observe(e); });
+    })();
+
+    // ----- Ambient supply-chain node network in hero -----
+    (function () {
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var canvas = document.getElementById('net');
+      if (!canvas) return;
+      var ctx = canvas.getContext('2d');
+      var host = canvas.parentElement;
+      var nodes = [], W = 0, H = 0, dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+      function accent() { return document.documentElement.classList.contains('dark') ? [52,183,167] : [14,124,114]; }
+      function resize() {
+        W = host.clientWidth; H = host.clientHeight;
+        canvas.width = W * dpr; canvas.height = H * dpr;
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        var count = Math.max(14, Math.round(W / 70));
+        nodes = [];
+        for (var i = 0; i < count; i++) nodes.push({
+          x: Math.random() * W, y: Math.random() * H,
+          vx: (Math.random() - 0.5) * 0.18, vy: (Math.random() - 0.5) * 0.18,
+          r: Math.random() * 1.6 + 1,
+        });
+      }
+      function draw() {
+        var c = accent();
+        ctx.clearRect(0, 0, W, H);
+        for (var i = 0; i < nodes.length; i++) {
+          var a = nodes[i];
+          a.x += a.vx; a.y += a.vy;
+          if (a.x < 0 || a.x > W) a.vx *= -1;
+          if (a.y < 0 || a.y > H) a.vy *= -1;
+          for (var j = i + 1; j < nodes.length; j++) {
+            var b = nodes[j], dx = a.x - b.x, dy = a.y - b.y, d = Math.sqrt(dx * dx + dy * dy);
+            if (d < 130) {
+              ctx.strokeStyle = 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',' + (1 - d / 130) * 0.22 + ')';
+              ctx.lineWidth = 1;
+              ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+            }
+          }
+        }
+        for (var k = 0; k < nodes.length; k++) {
+          ctx.fillStyle = 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',0.5)';
+          ctx.beginPath(); ctx.arc(nodes[k].x, nodes[k].y, nodes[k].r, 0, Math.PI * 2); ctx.fill();
+        }
+        if (!reduce) requestAnimationFrame(draw);
+      }
+      resize();
+      window.addEventListener('resize', resize);
+      draw();
+    })();
+  </script>
+</body>
+</html>
